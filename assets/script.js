@@ -294,3 +294,28 @@ var containerQuestionEl = document.getElementById("question-container");
                 }
             
         }
+
+    // clears high scores
+    var clearScores = function () {
+        HighScores = [];
+
+        while (listHighScoreEl.firstChild) {
+            listHighScoreEl.removeChild(listHighScoreEl.firstChild);
+        }
+
+        localStorage.clear(HighScores);
+
+    } 
+
+    loadHighScore()
+        
+      // on start click, start game
+      btnStartEl.addEventListener("click", startGame)
+      // on submit button -- enter or click
+      formInitials.addEventListener("submit", createHighScore)
+      // when view high-scores is clicked
+      ViewHighScoreEl.addEventListener("click", displayHighScores)
+      // go back button
+      btnGoBackEl.addEventListener("click", renderStartPage)
+      // clear scores button
+      btnClearScoresEl.addEventListener("click", clearScores)
