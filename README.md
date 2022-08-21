@@ -6,6 +6,9 @@ A JavaScript quiz with a timer and high scores.
 
 <a href="https://necro17.github.io/code-quiz/">View my project here.</a>
 
+## Challenges
+Like my last assignment, I had trouble with Git. At first, I could not get Git to work at all with my Github. I spent time troubleshooting and in the end what worked was deleting my old repository and creating a new one. I also had to use git push -f origin main a few times. It worked in the end but it was a big headache!
+
 ## User Story
 
 AS A coding boot camp student
