@@ -233,9 +233,31 @@ var containerQuestionEl = document.getElementById("question-container");
        displayHighScores();
  
      }
-     
+
      // save high score
      var saveHighScore = function () {
          localStorage.setItem("HighScores", JSON.stringify(HighScores))
              
      }
+
+    // load values and called on page load
+    var loadHighScore = function () {
+        var LoadedHighScores = localStorage.getItem("HighScores")
+            if (!LoadedHighScores) {
+            return false;
+        }
+
+        LoadedHighScores = JSON.parse(LoadedHighScores);
+        LoadedHighScores.sort((a, b) => {return b.score-a.score})
+ 
+
+        for (var i = 0; i < LoadedHighScores.length; i++) {
+            var highscoreEl = document.createElement("li");
+            highscoreEl.ClassName = "high-score";
+            highscoreEl.innerText = LoadedHighScores[i].initials + " - " + LoadedHighScores[i].score;
+            listHighScoreEl.appendChild(highscoreEl);
+
+            HighScores.push(LoadedHighScores[i]);
+            
+        }
+    }  
