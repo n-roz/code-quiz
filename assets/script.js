@@ -103,3 +103,29 @@ var containerQuestionEl = document.getElementById("question-container");
     
             }, 1000)
         }
+
+        var startGame = function() {
+            // add classes to show/hide start and quiz screen
+            containerStartEl.classList.add('hide');
+            containerStartEl.classList.remove('show');
+            containerQuestionEl.classList.remove('hide');
+            containerQuestionEl.classList.add('show');
+            // shuffle the questions so they show in random order
+            arrayShuffledQuestions = questions.sort(() => Math.random() - 0.5)
+            setTime()
+            setQuestion()
+          }
+        
+        // set next question for quiz
+        var setQuestion = function() {
+            resetAnswers()
+            displayQuestion(arrayShuffledQuestions[QuestionIndex])
+        }
+    
+        // remove answer buttons
+        var resetAnswers = function() {
+            while (answerbuttonsEl.firstChild) {
+                answerbuttonsEl.removeChild(answerbuttonsEl.firstChild)
+            };
+        };
+    
