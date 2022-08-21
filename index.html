@@ -32,7 +32,36 @@
         </div>
     </div>
 
+    <div id="end-container" class="hide">
+        <div class="container end">
+         <div id=score-banner>
+             <h1>All done!</h1>
+         </div>  
+         <form id="initials-form" class="initials">
+           <p> Enter Initials:
+             <input type="text" name="initials" id="initials" class="text-input" />
+             <button class="btn startend" id="sumbit-score" type="submit">Submit</button> </p>
+           </form>
+         </div>
+     </div>
 
+     <div id="high-score-container" class="hide">
+       <div class="high-scores container">
+         <h1 class="high-score">High Scores</h1>
+         <ol id="high-score-list" class="score-list"></ol>
+     <div>
+         <button class="btn" id="go-back">Go back</button>
+         <button class="btn" id="clear-high-scores">Clear high scores</button>
+     </div>
+     </div>
+ </div>
+
+ <div class="hide" id="correct">
+     <h2>Correct</h2>
+ </div>
+ <div class="hide" id="wrong">
+     <h2>Incorrect</h2>
+ </div>
 
     <!-- keep at bottom -->
     <script src="assets/script.js"></script>
