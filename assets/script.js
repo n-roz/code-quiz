@@ -129,3 +129,59 @@ var containerQuestionEl = document.getElementById("question-container");
             };
         };
     
+
+    // display question information (including answer buttons)
+    var displayQuestion = function(index) {
+        questionEl.innerText = index.q
+        for (var i = 0; i < index.choices.length; i++) {
+            var answerbutton = document.createElement('button')
+            answerbutton.innerText = index.choices[i].choice
+            answerbutton.classList.add('btn')
+            answerbutton.classList.add('answerbtn')
+            answerbutton.addEventListener("click", answerCheck)
+            answerbuttonsEl.appendChild(answerbutton)
+            }
+        };
+    // display 'correct' on screen
+    var answerCorrect = function() {
+        if (correctEl.className = "hide") {
+            correctEl.classList.remove("hide")
+            correctEl.classList.add("banner")
+            wrongEl.classList.remove("banner")
+            wrongEl.classList.add("hide")
+            }
+        }  
+    // display 'incorrect' on screen
+    var answerWrong = function() {
+        if (wrongEl.className = "hide") {
+            wrongEl.classList.remove("hide")
+            wrongEl.classList.add("banner")
+            correctEl.classList.remove("banner")
+            correctEl.classList.add("hide")
+        }
+    }
+
+    // check if answer is correct    
+    var answerCheck = function(event) {
+        var selectedanswer = event.target
+            if (arrayShuffledQuestions[QuestionIndex].a === selectedanswer.innerText){
+                answerCorrect()
+                score = score + 7
+            }
+
+            else {
+              answerWrong()
+              score = score - 1;
+              timeleft = timeleft - 3;
+          };
+
+        // go to next question, check if there are more questions
+          QuestionIndex++
+            if  (arrayShuffledQuestions.length > QuestionIndex + 1) {
+                setQuestion()
+            }   
+            else {
+               gameover = "true";
+               showScore();
+                }
+    }
