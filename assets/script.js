@@ -196,3 +196,23 @@ var containerQuestionEl = document.getElementById("question-container");
                 scoreDisplay.innerText = ("Your final score is " + score + "!");
                 containerScoreEl.appendChild(scoreDisplay);
             }   
+
+    // create high score values
+    var createHighScore = function(event) { 
+        event.preventDefault() 
+        var initials = document.querySelector("#initials").value;
+        if (!initials) {
+          alert("Enter your intials");
+          return;
+        }
+
+      formInitials.reset();
+
+      var HighScore = {
+      initials: initials,
+      score: score
+      } 
+
+      // push and sort scores
+      HighScores.push(HighScore);
+      HighScores.sort((a, b) => {return b.score-a.score});
