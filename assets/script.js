@@ -216,3 +216,26 @@ var containerQuestionEl = document.getElementById("question-container");
       // push and sort scores
       HighScores.push(HighScore);
       HighScores.sort((a, b) => {return b.score-a.score});
+
+    // clear list to re-sort
+    while (listHighScoreEl.firstChild) {
+        listHighScoreEl.removeChild(listHighScoreEl.firstChild)
+     }
+     // create elements in order of high scores
+     for (var i = 0; i < HighScores.length; i++) {
+       var highscoreEl = document.createElement("li");
+       highscoreEl.ClassName = "high-score";
+       highscoreEl.innerHTML = HighScores[i].initials + " - " + HighScores[i].score;
+       listHighScoreEl.appendChild(highscoreEl);
+     }
+ 
+       saveHighScore();
+       displayHighScores();
+ 
+     }
+     
+     // save high score
+     var saveHighScore = function () {
+         localStorage.setItem("HighScores", JSON.stringify(HighScores))
+             
+     }
