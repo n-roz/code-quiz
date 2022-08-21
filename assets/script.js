@@ -39,15 +39,15 @@ var containerQuestionEl = document.getElementById("question-container");
           a: '3. <script>', 
           choices: [{choice: '1. <h1>'}, {choice: '2. <js>'}, {choice: '3. <script>'}, {choice: '4. <head>'}]
         },
-        { q: 'In the code -- setinterval(time(),1000) -- what is time()?', 
-          a: '1. callback function', 
-          choices: [{choice: '1. callback function'}, {choice: '2. undefined'}, {choice: '3. variable'}, {choice: '4. all of the above'}]
+        { q: 'Which of the following is true about variable naming conventions in JavaScript?', 
+          a: '3. both of the above', 
+          choices: [{choice: '1. JavaScript variable names must begin with a letter or the underscore character.'}, {choice: '2. JavaScript variable names are case sensitive'}, {choice: '3. both of the above'}, {choice: '4. none of the above'}]
         },
         { q: 'What syntax would call a function?', 
           a: '4. function()', 
           choices: [{choice: '1. var function'}, {choice: '2. function'}, {choice: '3. call function'}, {choice: '4. function()'}]
         },
-        { q: 'When did javascript first appear?', 
+        { q: 'When did JavaScript first appear?', 
           a: '1. 1995', 
           choices: [{choice: '1. 1995'}, {choice: '2. 2005'}, {choice: '3. 2015'}, {choice: '4. 2025'}]
         },
