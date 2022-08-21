@@ -4,7 +4,7 @@ HTML, CSS, and JavaScript: Code Quiz
 
 A JavaScript quiz with a timer and high scores.
 
-// <a href="https://necro17.github.io/password-generator/">View my project here.</a>
+<a href="https://necro17.github.io/code-quiz/">View my project here.</a>
 
 ## User Story
 
