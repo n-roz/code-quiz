@@ -82,3 +82,24 @@ var containerQuestionEl = document.getElementById("question-container");
             wrongEl.classList.add("hide");
         }
     }
+
+        // check if game-over is true at every second, or if there is time left. Start time at 30. 
+        var setTime = function () {
+            timeleft = 30;
+    
+        var timercheck = setInterval(function() {
+            timerEl.innerText = timeleft;
+            timeleft--
+    
+            if (gameover) {
+                clearInterval(timercheck)
+            }
+           
+            if (timeleft < 0) {
+                showScore()
+                timerEl.innerText = 0
+                clearInterval(timercheck)
+            }
+    
+            }, 1000)
+        }
